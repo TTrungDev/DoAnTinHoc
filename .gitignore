@@ -1,0 +1,16 @@
+# Thư mục cấu hình của Visual Studio
+.vs/
+
+# Thư mục chứa file biên dịch (build)
+bin/
+obj/
+
+# File cấu hình cá nhân
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# File log, file tạm
+*.log
+*.tmp
