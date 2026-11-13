@@ -1,9 +1,15 @@
-namespace LibraryManagement
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace QuanLyThuVien
 {
     internal static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
@@ -12,7 +18,7 @@ namespace LibraryManagement
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new FormLibrarian()); 
-            Application.Run(new FormLibrarian());
+            Application.Run(new Form1());
         }
     }
 }
