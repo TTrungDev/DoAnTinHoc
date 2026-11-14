@@ -121,3 +121,14 @@ CREATE TABLE Settings (
     Description NVARCHAR(200) NULL -- Mô tả cấu hình
 );
 GO
+
+--------------------------
+
+-- Stored Procedure: Lấy thông tin thể loại sách theo tên thể loại
+CREATE PROC USP_GetCategoryByCategoryName
+@categoryName NVARCHAR(100)
+AS
+BEGIN
+    SELECT * FROM Categories 
+    WHERE CategoryName = @categoryName
+END

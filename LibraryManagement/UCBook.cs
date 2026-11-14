@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,14 @@ namespace LibraryManagement
         public UCBook()
         {
             InitializeComponent();
+            LoadBookList();
+        }
+
+        public void LoadBookList()
+        {
+            string query = "SELECT * FROM Books";
+
+            dgvBook.DataSource = DataProvider.Instacne.ExecuteQuery(query);
         }
     }
 }
