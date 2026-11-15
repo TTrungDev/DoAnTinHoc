@@ -25,7 +25,7 @@ namespace LibraryManagement.DAO
 
         private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LibraryManagement;Integrated Security=True;Trust Server Certificate=True";
 
-        // object[] parameter = null Là vì nếu không có 
+        // object[] parameter = null Là vì nếu không có giá trị thì vẫn chạy command
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

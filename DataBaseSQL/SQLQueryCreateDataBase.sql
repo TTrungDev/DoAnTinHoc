@@ -123,12 +123,32 @@ CREATE TABLE Settings (
 GO
 
 --------------------------
-
 -- Stored Procedure: Lấy thông tin thể loại sách theo tên thể loại
-CREATE PROC USP_GetCategoryByCategoryName
+
+CREATE PROC USP_GetCategories
+AS
+BEGIN
+    SELECT * FROM Categories
+END
+
+CREATE PROC USP_GetCategoriesByCategoryName
 @categoryName NVARCHAR(100)
 AS
 BEGIN
     SELECT * FROM Categories 
     WHERE CategoryName = @categoryName
+END
+
+CREATE PROC USP_GetBooks
+AS
+BEGIN
+    SELECT * FROM Books
+END
+
+CREATE PROC USP_GetBooksByTitle
+@Title NVARCHAR(200)
+AS
+BEGIN
+    SELECT * FROM Books 
+    WHERE Title = @Title
 END

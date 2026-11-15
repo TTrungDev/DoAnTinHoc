@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.DAO;
+using LibraryManagement.DTO;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -16,14 +17,22 @@ namespace LibraryManagement
         {
             InitializeComponent();
 
-            LoadCategoryList();
+            LoadCategory();
         }
 
-        public void LoadCategoryList()
+        public void LoadCategory()
         {
-            string query = "EXEC USP_GetCategoryByCategoryName @categoryName";
+            List<Category> categoryList = CategoryDAO.Instance.LoadCategoryList();
 
-            dgvCategory.DataSource = DataProvider.Instacne.ExecuteQuery(query, new object[] { "Khoa học"});
+            foreach (Category item in categoryList)
+            {
+                Button btn = new Button() { Width = CategoryDAO.CategoryWidth, Height = CategoryDAO.CategoryHeight };
+                btn.Text = "#" + item.ID + Environment.NewLine + item.Name;
+
+                flpCategory.Controls.Add(btn);
+
+            }
+
         }
     }
 }

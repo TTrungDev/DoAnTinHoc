@@ -19,9 +19,9 @@ namespace LibraryManagement
 
         public void LoadBookList()
         {
-            string query = "SELECT * FROM Books";
+            string query = "EXEC USP_GetBooksByTitle @Title";
 
-            dgvBook.DataSource = DataProvider.Instacne.ExecuteQuery(query);
+            dgvBook.DataSource = DataProvider.Instacne.ExecuteQuery(query, new object[] { "Clean Code"});
         }
     }
 }
