@@ -51,7 +51,6 @@ namespace LibraryManagement.DAO
                     }
                 }
 
-
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 adapter.Fill(data);
@@ -62,16 +61,33 @@ namespace LibraryManagement.DAO
             return data;
         }
 
-        // Trả về số dòng thực hiện query thành công
-        public int ExecuteNoQuery(string query)
+
+        // trả về số dòng được cập nhập
+        public int ExecuteNoQuery(string query, object[] parameter = null)
         {
             int data = 0;
+
             // giải phóng cho dù khối lệnh không được thực thi hết
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        // Contains Trả về giá trị cho biết ký tự được chỉ định có xuất hiện trong chuỗi này hay không
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+                }
 
                 data = command.ExecuteNonQuery();
 
@@ -82,15 +98,31 @@ namespace LibraryManagement.DAO
         }
 
         // Trả về cột đầu tiên của hàng đầu tiên
-        public object ExecuteScalar(string query)
+        public object ExecuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
+
             // giải phóng cho dù khối lệnh không được thực thi hết
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        // Contains Trả về giá trị cho biết ký tự được chỉ định có xuất hiện trong chuỗi này hay không
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+                }
 
                 data = command.ExecuteScalar();
 
