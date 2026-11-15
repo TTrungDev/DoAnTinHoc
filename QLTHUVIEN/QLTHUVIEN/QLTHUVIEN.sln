@@ -1,0 +1,15 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37824.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{42EA0DBD-9CF1-443E-919E-BE9C484E4577}") = "QLTHUVIEN", "QLTHUVIEN\QLTHUVIEN.sqlproj", "{7966415E-D954-4DD0-8417-7DDE2C153232}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E0B2DF9-B468-4E67-98F7-E26EE2B8EC78}
+	EndGlobalSection
+EndGlobal
