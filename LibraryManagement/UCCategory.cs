@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LibraryManagement.DAO;
+using LibraryManagement.DTO;
+using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,30 +18,22 @@ namespace LibraryManagement
         {
             InitializeComponent();
 
-            LoadCategoryList();
+            LoadCategory();
         }
 
-        void LoadCategoryList()
+        public void LoadCategory()
         {
-            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LibraryManagement;Integrated Security=True;Trust Server Certificate=True";
+            List<Category> categoryList = CategoryDAO.Instance.LoadCategoryList();
 
-            SqlConnection connection = new SqlConnection(connectionString);
+            foreach (Category item in categoryList)
+            {
+                Button btn = new Button() { Width = CategoryDAO.CategoryWidth, Height = CategoryDAO.CategoryHeight };
+                btn.Text = "#" + item.ID + Environment.NewLine + item.Name;
 
-            string query = "SELECT * FROM Categories";
+                flpCategory.Controls.Add(btn);
 
-            connection.Open();
+            }
 
-            SqlCommand command = new SqlCommand(query, connection);
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-            DataTable data = new DataTable();
-
-            adapter.Fill(data);
-
-            dgvCategory.DataSource = data;
-
-            connection.Close();
         }
     }
 }

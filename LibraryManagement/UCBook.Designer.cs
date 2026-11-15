@@ -44,10 +44,10 @@
             button6 = new Button();
             textBox3 = new TextBox();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvBook = new DataGridView();
             panel2 = new Panel();
             panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBook).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -191,14 +191,14 @@
             label1.TabIndex = 0;
             label1.Text = "Sách";
             // 
-            // dataGridView1
+            // dgvBook
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 82);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(400, 341);
-            dataGridView1.TabIndex = 5;
+            dgvBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBook.Location = new Point(3, 82);
+            dgvBook.Name = "dgvBook";
+            dgvBook.RowHeadersWidth = 51;
+            dgvBook.Size = new Size(400, 341);
+            dgvBook.TabIndex = 5;
             // 
             // panel2
             // 
@@ -230,16 +230,16 @@
             panel1.Size = new Size(601, 73);
             panel1.TabIndex = 3;
             // 
-            // UC_Books
+            // UCBook
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvBook);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Name = "UC_Books";
+            Name = "UCBook";
             Size = new Size(607, 426);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBook).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -265,7 +265,7 @@
         private Button button6;
         private TextBox textBox3;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvBook;
         private Panel panel2;
         private Panel panel1;
     }

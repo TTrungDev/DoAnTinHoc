@@ -46,10 +46,9 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            dgvCategory = new DataGridView();
+            flpCategory = new FlowLayoutPanel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvCategory).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -221,20 +220,18 @@
             label2.TabIndex = 0;
             label2.Text = "Thông tin thể loại";
             // 
-            // dgvCategory
+            // flpCategory
             // 
-            dgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategory.Location = new Point(3, 82);
-            dgvCategory.Name = "dgvCategory";
-            dgvCategory.RowHeadersWidth = 51;
-            dgvCategory.Size = new Size(400, 341);
-            dgvCategory.TabIndex = 2;
+            flpCategory.Location = new Point(3, 82);
+            flpCategory.Name = "flpCategory";
+            flpCategory.Size = new Size(400, 341);
+            flpCategory.TabIndex = 2;
             // 
             // UCCategory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(dgvCategory);
+            Controls.Add(flpCategory);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "UCCategory";
@@ -243,7 +240,6 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvCategory).EndInit();
             ResumeLayout(false);
         }
 
@@ -252,7 +248,6 @@
         private Panel panel1;
         private Label label1;
         private Panel panel2;
-        private DataGridView dgvCategory;
         private Label label2;
         private TextBox textBox1;
         private Label label5;
@@ -268,5 +263,6 @@
         private Button button4;
         private Button button5;
         private Button button7;
+        private FlowLayoutPanel flpCategory;
     }
 }
