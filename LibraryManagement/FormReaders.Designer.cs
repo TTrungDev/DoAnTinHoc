@@ -1,6 +1,6 @@
 ﻿namespace QuanLyThuVien
 {
-    partial class Form1
+    partial class FormReaders
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReaders));
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.txtTraCuSach = new System.Windows.Forms.TabPage();
@@ -93,7 +93,6 @@
             this.label1.Size = new System.Drawing.Size(277, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "GIAO DIỆN ĐỘC GIẢ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tabControl1
             // 
@@ -163,7 +162,7 @@
             this.btnTimSach.TabIndex = 3;
             this.btnTimSach.Text = "Tìm kiếm";
             this.btnTimSach.UseVisualStyleBackColor = true;
-            this.btnTimSach.Click += new System.EventHandler(this.btnTimSach_Click);
+            this.btnTimSach.Click += new System.EventHandler(this.btnSearchBook_Click);
             // 
             // txtTimKiemSach
             // 
@@ -184,7 +183,7 @@
             this.cboTimTheoSach.Name = "cboTimTheoSach";
             this.cboTimTheoSach.Size = new System.Drawing.Size(121, 24);
             this.cboTimTheoSach.TabIndex = 1;
-            this.cboTimTheoSach.SelectedIndexChanged += new System.EventHandler(this.cboTimTheoSach_SelectedIndexChanged);
+            this.cboTimTheoSach.SelectedIndexChanged += new System.EventHandler(this.cboSearchByBook_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -240,7 +239,7 @@
             this.cboTinhTrangPhieu.Name = "cboTinhTrangPhieu";
             this.cboTinhTrangPhieu.Size = new System.Drawing.Size(188, 24);
             this.cboTinhTrangPhieu.TabIndex = 2;
-            this.cboTinhTrangPhieu.SelectedIndexChanged += new System.EventHandler(this.cboTinhTrang_SelectedIndexChanged);
+            this.cboTinhTrangPhieu.SelectedIndexChanged += new System.EventHandler(this.cboStatus_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -340,7 +339,7 @@
             this.btnNapQuy.TabIndex = 3;
             this.btnNapQuy.Text = "Nạp quỹ";
             this.btnNapQuy.UseVisualStyleBackColor = true;
-            this.btnNapQuy.Click += new System.EventHandler(this.btnNapQuy_Click);
+            this.btnNapQuy.Click += new System.EventHandler(this.btnFundDeposit_Click);
             // 
             // label11
             // 
@@ -437,6 +436,8 @@
             this.txtMaDG.ReadOnly = true;
             this.txtMaDG.Size = new System.Drawing.Size(100, 22);
             this.txtMaDG.TabIndex = 6;
+            this.txtMaDG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMaDG.TextChanged += new System.EventHandler(this.txtReaderID_TextChanged);
             // 
             // label9
             // 
@@ -464,7 +465,6 @@
             this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Email";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -492,7 +492,6 @@
             this.label4.Size = new System.Drawing.Size(74, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã độc giả";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // picLogo
             // 
@@ -504,7 +503,7 @@
             this.picLogo.TabIndex = 2;
             this.picLogo.TabStop = false;
             // 
-            // Form1
+            // FormReaders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -512,7 +511,7 @@
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "FormReaders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HỆ THỐNG THƯ VIỆN - ĐỘC GIẢ";
             this.tabControl1.ResumeLayout(false);
