@@ -1,4 +1,4 @@
-﻿namespace QuanLyThuVien
+﻿namespace LibraryManagement
 {
     partial class FormReaders
     {
