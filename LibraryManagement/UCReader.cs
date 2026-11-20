@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,15 @@ namespace LibraryManagement
         public UCReader()
         {
             InitializeComponent();
+            ShowReaderList();
+        }
+        
+        private void ShowReaderList()
+        {
+
+            dgvReader.DataSource = ReaderDAO.Instation.LoadReaderList();
+            object[] find = { txtFind.Text };
+            dgvReader.DataSource = ReaderDAO.Instation.LoadReaderList(find);
         }
     }
 }

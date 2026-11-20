@@ -14,7 +14,7 @@ CREATE TABLE Users (
     Email NVARCHAR(100) NOT NULL UNIQUE,
     Address NVARCHAR(200) NULL,
     Balance DECIMAL(12,0) NOT NULL DEFAULT 0 CHECK (Balance >= 0), -- So du quy (chi dung cho doc gia)
-    CreatedAt DATETIME NOT NULL DEFAULT GETDATE()
+    CreatedAt DATETIME NOT NULL DEFAULT GETDATE() 
 );
 GO
 
@@ -152,3 +152,19 @@ BEGIN
     SELECT * FROM Books 
     WHERE Title = @Title
 END
+
+CREATE PROC USP_GetReaders
+AS
+BEGIN
+    SELECT * FROM Users
+END
+
+CREATE PROC USP_GetReadersByFullName
+@fullName NVARCHAR(100)
+as
+BEGIN
+    SELECT * FROM Users 
+    WHERE FullName = @fullName
+END
+
+exec USP_GetReadersByFullName @fullName = N'Nguyen Van A'

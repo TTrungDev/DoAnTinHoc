@@ -55,13 +55,13 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(ucCategory1);
             panel2.Controls.Add(ucStatistical1);
             panel2.Controls.Add(ucOverdue1);
             panel2.Controls.Add(ucReturnRecord1);
             panel2.Controls.Add(ucBorrowRecord1);
             panel2.Controls.Add(ucReader1);
             panel2.Controls.Add(ucBook1);
-            panel2.Controls.Add(ucCategory1);
             panel2.Location = new Point(181, 12);
             panel2.Name = "panel2";
             panel2.Size = new Size(607, 426);
