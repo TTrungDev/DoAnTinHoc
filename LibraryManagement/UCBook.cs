@@ -21,7 +21,7 @@ namespace LibraryManagement
         {
             string query = "EXEC USP_GetBooksByTitle @Title";
 
-            dgvBook.DataSource = DataProvider.Instacne.ExecuteQuery(query, new object[] { "Clean Code"});
+            dgvBook.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { "Clean Code"});
         }
     }
 }

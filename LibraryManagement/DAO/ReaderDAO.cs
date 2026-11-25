@@ -8,24 +8,28 @@ namespace LibraryManagement.DAO
 {
     internal class ReaderDAO
     {
-        private static ReaderDAO instation;
+        private static ReaderDAO instance;
 
-        public static ReaderDAO Instation
+        public static ReaderDAO Instance
         {
             get 
             {
-                if (instation == null)
-                    instation = new ReaderDAO();
-                return instation; 
+                if (instance == null)
+                    instance = new ReaderDAO();
+                return instance; 
             }
-            set { instation = value; }
+            set { instance = value; }
         }
 
         public List<Reader> LoadReaderList(object[] find=null)
         {
-            string query = "EXEC USP_GetReadersByFullName @fullName";
+            string query = " EXEC USP_GetReadersByFullName @fullName ";
+            if (find == null || find.Length == 0 || find[0] == null)
+            {
+                find = new object[] { " " };
+            }
 
-            DataTable data = DataProvider.Instacne.ExecuteQuery(query,find);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, find);
 
             List<Reader> readerList = new List<Reader>();
             foreach (DataRow row in data.Rows)
