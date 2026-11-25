@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +16,18 @@ namespace LibraryManagement
         public FormAdmin()
         {
             InitializeComponent();
+            loadAccountList();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
+        }
+        void loadAccountList()
+        {
+            string query = "SELECT * FROM Account";
+            DataTable data = DAO.DataProvider.Instance.ExecuteQuery(query);
+            DataProvider provide = new DataProvider();
+            dgvAccount.DataSource = provide.ExecuteQuery(query);
         }
     }
 }

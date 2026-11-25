@@ -31,7 +31,7 @@ namespace LibraryManagement.DAO
             List<Category> categoryList = new List<Category>();
 
             string query = "EXEC USP_GetCategories";
-            DataTable data = DataProvider.Instacne.ExecuteQuery(query, new object[] { });
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { });
 
             foreach (DataRow row in data.Rows)
             {

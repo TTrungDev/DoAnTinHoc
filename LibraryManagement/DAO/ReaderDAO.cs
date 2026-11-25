@@ -25,7 +25,7 @@ namespace LibraryManagement.DAO
         {
             string query = "EXEC USP_GetReadersByFullName @fullName";
 
-            DataTable data = DataProvider.Instacne.ExecuteQuery(query,find);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query,find);
 
             List<Reader> readerList = new List<Reader>();
             foreach (DataRow row in data.Rows)
