@@ -14,14 +14,14 @@ namespace LibraryManagement
         public UCBook()
         {
             InitializeComponent();
-            LoadBookList();
+            showBookList();
         }
 
-        public void LoadBookList()
+        public void showBookList()
         {
-            string query = "EXEC USP_GetBooksByTitle @Title";
-
-            dgvBook.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { "Clean Code"});
+            dgvBook.DataSource = BookDAO.Instance.LoadBookList();
+            object[] find = { txtFindB.Text };
+            dgvBook.DataSource = BookDAO.Instance.LoadBookList(find);
         }
     }
 }

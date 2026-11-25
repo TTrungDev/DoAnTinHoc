@@ -17,23 +17,18 @@ namespace LibraryManagement
         public UCCategory()
         {
             InitializeComponent();
-
-            LoadCategory();
+            showCategoryList();
         }
 
-        public void LoadCategory()
+
+        private void showCategoryList()
         {
-            List<Category> categoryList = CategoryDAO.Instance.LoadCategoryList();
+            
+            dgvCaterory.DataSource = CategoryDAO.Instance.LoadCategoryList();
+            object[] find = { txtFindCT.Text };
+            dgvCaterory.DataSource = CategoryDAO.Instance.LoadCategoryList(find);
 
-            foreach (Category item in categoryList)
-            {
-                Button btn = new Button() { Width = CategoryDAO.CategoryWidth, Height = CategoryDAO.CategoryHeight };
-                btn.Text = "#" + item.ID + Environment.NewLine + item.Name;
-
-                flpCategory.Controls.Add(btn);
-
-            }
-
-        }
+        }   
     }
 }
+    

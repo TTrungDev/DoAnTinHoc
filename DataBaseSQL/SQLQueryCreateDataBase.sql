@@ -168,8 +168,6 @@ BEGIN
     WHERE FullName = @fullName
 END
 GO
-
-
 CREATE PROC USP_GetAccountByUsername
 @username NVARCHAR(100)
 AS

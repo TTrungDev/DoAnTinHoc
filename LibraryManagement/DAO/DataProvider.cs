@@ -10,7 +10,7 @@ namespace LibraryManagement.DAO
     {
         private static DataProvider instance;
         
-        public static DataProvider Instacne
+        public static DataProvider Instance
         {
             get
             { 

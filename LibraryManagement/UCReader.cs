@@ -20,9 +20,9 @@ namespace LibraryManagement
         private void ShowReaderList()
         {
 
-            dgvReader.DataSource = ReaderDAO.Instation.LoadReaderList();
+            dgvReader.DataSource = ReaderDAO.Instance.LoadReaderList();
             object[] find = { txtFind.Text };
-            dgvReader.DataSource = ReaderDAO.Instation.LoadReaderList(find);
+            dgvReader.DataSource = ReaderDAO.Instance.LoadReaderList(find);
         }
     }
 }

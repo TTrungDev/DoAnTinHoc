@@ -23,10 +23,10 @@ namespace LibraryManagement.DAO
 
         public List<Reader> LoadReaderList(object[] find=null)
         {
-            string query = " EXEC USP_GetReadersByFullName @fullName ";
+            string query = " EXEC USP_GetReaders";
             if (find == null || find.Length == 0 || find[0] == null)
             {
-                find = new object[] { " " };
+                find = new object[] { "" };
             }
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query, find);

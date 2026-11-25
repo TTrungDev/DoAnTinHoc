@@ -31,7 +31,7 @@
             panel1 = new Panel();
             button7 = new Button();
             button6 = new Button();
-            textBox3 = new TextBox();
+            txtFindCT = new TextBox();
             label1 = new Label();
             panel2 = new Panel();
             button4 = new Button();
@@ -47,15 +47,18 @@
             label3 = new Label();
             label2 = new Label();
             flpCategory = new FlowLayoutPanel();
+            dgvCaterory = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            flpCategory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCaterory).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Controls.Add(button7);
             panel1.Controls.Add(button6);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtFindCT);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
@@ -80,12 +83,12 @@
             button6.Text = "Tìm kiếm";
             button6.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtFindCT
             // 
-            textBox3.Location = new Point(130, 31);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(280, 27);
-            textBox3.TabIndex = 1;
+            txtFindCT.Location = new Point(130, 31);
+            txtFindCT.Name = "txtFindCT";
+            txtFindCT.Size = new Size(280, 27);
+            txtFindCT.TabIndex = 1;
             // 
             // label1
             // 
@@ -222,10 +225,20 @@
             // 
             // flpCategory
             // 
+            flpCategory.Controls.Add(dgvCaterory);
             flpCategory.Location = new Point(3, 82);
             flpCategory.Name = "flpCategory";
             flpCategory.Size = new Size(400, 341);
             flpCategory.TabIndex = 2;
+            // 
+            // dgvCaterory
+            // 
+            dgvCaterory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCaterory.Location = new Point(3, 3);
+            dgvCaterory.Name = "dgvCaterory";
+            dgvCaterory.RowHeadersWidth = 51;
+            dgvCaterory.Size = new Size(397, 338);
+            dgvCaterory.TabIndex = 0;
             // 
             // UCCategory
             // 
@@ -240,6 +253,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            flpCategory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvCaterory).EndInit();
             ResumeLayout(false);
         }
 
@@ -259,10 +274,11 @@
         private Button button3;
         private Button button2;
         private Button button6;
-        private TextBox textBox3;
+        private TextBox txtFindCT;
         private Button button4;
         private Button button5;
         private Button button7;
         private FlowLayoutPanel flpCategory;
+        private DataGridView dgvCaterory;
     }
 }

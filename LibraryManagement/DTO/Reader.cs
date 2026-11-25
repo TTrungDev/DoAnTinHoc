@@ -19,7 +19,7 @@ namespace LibraryManagement.DTO
 
         public Reader(DataRow row)
         {
-            //this.ID = (int)row["UserID"];
+            this.ID = (int)row["UserID"];
             this.FullName = (string)row["FullName"];
             this.BirthDate = (DateTime)row["BirthDate"];
         }

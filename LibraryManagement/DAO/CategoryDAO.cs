@@ -26,12 +26,12 @@ namespace LibraryManagement.DAO
             }
         }
 
-        public List<Category> LoadCategoryList()
+        public List<Category> LoadCategoryList(object[] find = null)
         {
             List<Category> categoryList = new List<Category>();
 
             string query = "EXEC USP_GetCategories";
-            DataTable data = DataProvider.Instacne.ExecuteQuery(query, new object[] { });
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { });
 
             foreach (DataRow row in data.Rows)
             {
