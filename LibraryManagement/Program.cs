@@ -18,7 +18,7 @@ namespace LibraryManagement
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new FormLibrarian()); 
-            Application.Run(new FormLibrarian());
+            Application.Run(new FormAdmin());
         }
     }
 }

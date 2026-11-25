@@ -15,16 +15,17 @@ namespace LibraryManagement
         public FormDangNhap()
         {
             InitializeComponent();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         // 2. Hàm kiểm tra dữ liệu đầu vào (Validation)
@@ -51,19 +52,24 @@ namespace LibraryManagement
 
         // 3. Hàm xử lý sự kiện nút "Sign In"
         private void btnSignIn_Click(object sender, EventArgs e)
-        {   
-            
+        {
+
         }
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            
-            FormDangKy f= new FormDangKy();
+
+            FormDangKy f = new FormDangKy();
             f.Show();
         }
 
         // 5. Hàm xử lý sự kiện nhấn vào "Forgot_password."
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
+        }
+
+        private void txtusername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
