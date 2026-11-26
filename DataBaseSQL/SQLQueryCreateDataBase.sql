@@ -19,7 +19,7 @@ CREATE TABLE Users (
 GO
 
 -- Accounts: Thông tin đăng nhập của người dùng, mỗi người dùng chỉ có 1 tài khoản
-CREATE TABLE Accounts (
+CREATE OR ALTER TABLE Accounts (
     AccountID INT IDENTITY(1,1) PRIMARY KEY,
     UserID INT NOT NULL UNIQUE REFERENCES Users(UserID), -- Quan hệ 1-1 với bảng Users
     Username NVARCHAR(50) NOT NULL UNIQUE,
@@ -121,50 +121,3 @@ CREATE TABLE Settings (
     Description NVARCHAR(200) NULL -- Mô tả cấu hình
 );
 GO
-
---------------------------
--- Stored Procedure: Lấy thông tin thể loại sách theo tên thể loại
-
-CREATE PROC USP_GetCategories
-AS
-BEGIN
-    SELECT * FROM Categories
-END
-
-CREATE PROC USP_GetCategoriesByCategoryName
-@categoryName NVARCHAR(100)
-AS
-BEGIN
-    SELECT * FROM Categories 
-    WHERE CategoryName = @categoryName
-END
-
-CREATE PROC USP_GetBooks
-AS
-BEGIN
-    SELECT * FROM Books
-END
-
-CREATE PROC USP_GetBooksByTitle
-@Title NVARCHAR(200)
-AS
-BEGIN
-    SELECT * FROM Books 
-    WHERE Title = @Title
-END
-
-CREATE PROC USP_GetReaders
-AS
-BEGIN
-    SELECT * FROM Users
-END
-
-CREATE PROC USP_GetReadersByFullName
-@fullName NVARCHAR(100)
-as
-BEGIN
-    SELECT * FROM Users 
-    WHERE FullName = @fullName
-END
-
-exec USP_GetReadersByFullName @fullName = N'Nguyen Van A'
