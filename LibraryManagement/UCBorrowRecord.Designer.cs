@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label7 = new Label();
             dateTimePicker2 = new DateTimePicker();
             label4 = new Label();
+            label8 = new Label();
             dateTimePicker1 = new DateTimePicker();
             label9 = new Label();
+            textBox2 = new TextBox();
             button7 = new Button();
+            button1 = new Button();
             button6 = new Button();
             textBox3 = new TextBox();
+            textBox1 = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label11 = new Label();
             label3 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            textBox1 = new TextBox();
             panel3 = new Panel();
             button3 = new Button();
-            dataGridView1 = new DataGridView();
+            dgvBorrowRecord = new DataGridView();
             button4 = new Button();
             label2 = new Label();
             panel2 = new Panel();
             label1 = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBorrowRecord).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,6 +81,15 @@
             panel1.Size = new Size(601, 153);
             panel1.TabIndex = 0;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(351, 116);
+            label7.Name = "label7";
+            label7.Size = new Size(69, 20);
+            label7.TabIndex = 32;
+            label7.Text = "Số lượng";
+            // 
             // dateTimePicker2
             // 
             dateTimePicker2.Location = new Point(325, 82);
@@ -96,6 +105,15 @@
             label4.Size = new Size(66, 20);
             label4.TabIndex = 30;
             label4.Text = "Ngày trả";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(26, 118);
+            label8.Name = "label8";
+            label8.Size = new Size(65, 20);
+            label8.TabIndex = 33;
+            label8.Text = "Tên sách";
             // 
             // dateTimePicker1
             // 
@@ -113,6 +131,13 @@
             label9.TabIndex = 28;
             label9.Text = "Ngày mượn";
             // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(426, 111);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(50, 27);
+            textBox2.TabIndex = 35;
+            // 
             // button7
             // 
             button7.Location = new Point(496, 49);
@@ -121,6 +146,15 @@
             button7.TabIndex = 27;
             button7.Text = "Làm mới";
             button7.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(482, 113);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 27);
+            button1.TabIndex = 34;
+            button1.Text = "Thêm sách";
+            button1.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -137,6 +171,13 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(164, 27);
             textBox3.TabIndex = 25;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(108, 115);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(237, 27);
+            textBox1.TabIndex = 32;
             // 
             // label6
             // 
@@ -175,51 +216,10 @@
             label3.TabIndex = 3;
             label3.Text = "1. Độc giả";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(351, 116);
-            label7.Name = "label7";
-            label7.Size = new Size(69, 20);
-            label7.TabIndex = 32;
-            label7.Text = "Số lượng";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(26, 118);
-            label8.Name = "label8";
-            label8.Size = new Size(65, 20);
-            label8.TabIndex = 33;
-            label8.Text = "Tên sách";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(426, 111);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(50, 27);
-            textBox2.TabIndex = 35;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(482, 113);
-            button1.Name = "button1";
-            button1.Size = new Size(95, 27);
-            button1.TabIndex = 34;
-            button1.Text = "Thêm sách";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(108, 115);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(237, 27);
-            textBox1.TabIndex = 32;
-            // 
             // panel3
             // 
             panel3.Controls.Add(button3);
-            panel3.Controls.Add(dataGridView1);
+            panel3.Controls.Add(dgvBorrowRecord);
             panel3.Controls.Add(button4);
             panel3.Controls.Add(label2);
             panel3.Location = new Point(3, 222);
@@ -236,14 +236,14 @@
             button3.Text = "Lưu phiếu";
             button3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvBorrowRecord
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(26, 46);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(562, 107);
-            dataGridView1.TabIndex = 2;
+            dgvBorrowRecord.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBorrowRecord.Location = new Point(26, 46);
+            dgvBorrowRecord.Name = "dgvBorrowRecord";
+            dgvBorrowRecord.RowHeadersWidth = 51;
+            dgvBorrowRecord.Size = new Size(562, 107);
+            dgvBorrowRecord.TabIndex = 2;
             // 
             // button4
             // 
@@ -281,21 +281,21 @@
             label1.Size = new Size(163, 38);
             label1.TabIndex = 0;
             label1.Text = "Mượn sách";
-            //
-            // UcBorrowRecord
-            //
+            // 
+            // UCBorrowRecord
+            // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel2);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Name = "UcBorrowRecord";
+            Name = "UCBorrowRecord";
             Size = new Size(607, 426);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBorrowRecord).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -322,7 +322,7 @@
         private TextBox textBox2;
         private Button button1;
         private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvBorrowRecord;
         private Button button3;
         private Button button4;
         private Panel panel2;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,11 @@ namespace LibraryManagement
         public UCBorrowRecord()
         {
             InitializeComponent();
+            showBorrowRecordList();
+        }
+        public void showBorrowRecordList()
+        {
+            dgvBorrowRecord.DataSource = BorrowRecordDAO.Instance.LoadBorrowRecordList();
         }
     }
 }

@@ -130,7 +130,7 @@ AS
 BEGIN
     SELECT * FROM Categories
 END
-
+GO
 CREATE PROC USP_GetCategoriesByCategoryName
 @categoryName NVARCHAR(100)
 AS
@@ -138,13 +138,13 @@ BEGIN
     SELECT * FROM Categories 
     WHERE CategoryName = @categoryName
 END
-
+GO
 CREATE PROC USP_GetBooks
 AS
 BEGIN
     SELECT * FROM Books
 END
-
+GO
 CREATE PROC USP_GetBooksByTitle
 @Title NVARCHAR(200)
 AS
@@ -152,13 +152,14 @@ BEGIN
     SELECT * FROM Books 
     WHERE Title = @Title
 END
+GO
 
 CREATE PROC USP_GetReaders
 AS
 BEGIN
     SELECT * FROM Users
 END
-
+GO
 CREATE PROC USP_GetReadersByFullName
 @fullName NVARCHAR(100)
 as
@@ -166,5 +167,22 @@ BEGIN
     SELECT * FROM Users 
     WHERE FullName = @fullName
 END
+GO
 
-exec USP_GetReadersByFullName @fullName = N'Nguyen Van A'
+CREATE PROC USP_GetAccountsByUsername
+@username NVARCHAR(100)
+AS
+BEGIN
+    SELECT * FROM dbo.Accounts 
+    WHERE Username = @username
+END
+GO
+
+CREATE PROC USP_SearchAuthors
+@AuthorName NVARCHAR(100)
+AS
+BEGIN
+    SELECT * FROM Authors
+    WHERE AuthorName LIKE '%' + @AuthorName + '%'
+END
+GO

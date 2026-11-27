@@ -42,7 +42,7 @@
             label2 = new Label();
             button7 = new Button();
             button6 = new Button();
-            textBox3 = new TextBox();
+            txtFindB = new TextBox();
             label1 = new Label();
             dgvBook = new DataGridView();
             panel2 = new Panel();
@@ -173,13 +173,14 @@
             button6.TabIndex = 2;
             button6.Text = "Tìm kiếm";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += btnTimB_Click;
             // 
-            // textBox3
+            // txtFindB
             // 
-            textBox3.Location = new Point(130, 31);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(280, 27);
-            textBox3.TabIndex = 1;
+            txtFindB.Location = new Point(130, 31);
+            txtFindB.Name = "txtFindB";
+            txtFindB.Size = new Size(280, 27);
+            txtFindB.TabIndex = 1;
             // 
             // label1
             // 
@@ -223,7 +224,7 @@
             // 
             panel1.Controls.Add(button7);
             panel1.Controls.Add(button6);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtFindB);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
@@ -263,7 +264,7 @@
         private Label label2;
         private Button button7;
         private Button button6;
-        private TextBox textBox3;
+        private TextBox txtFindB;
         private Label label1;
         private DataGridView dgvBook;
         private Panel panel2;
