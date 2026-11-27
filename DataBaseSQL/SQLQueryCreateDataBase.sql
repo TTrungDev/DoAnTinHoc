@@ -168,11 +168,21 @@ BEGIN
     WHERE FullName = @fullName
 END
 GO
-CREATE PROC USP_GetAccountByUsername
+
+CREATE PROC USP_GetAccountsByUsername
 @username NVARCHAR(100)
 AS
 BEGIN
     SELECT * FROM dbo.Accounts 
     WHERE Username = @username
+END
+GO
+
+CREATE PROC USP_SearchAuthors
+@AuthorName NVARCHAR(100)
+AS
+BEGIN
+    SELECT * FROM Authors
+    WHERE AuthorName LIKE '%' + @AuthorName + '%'
 END
 GO

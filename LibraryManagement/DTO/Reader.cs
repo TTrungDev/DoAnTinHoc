@@ -1,50 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace LibraryManagement.DTO
 {
+    /// <summary>Độc giả (bảng Users). Balance là số dư quỹ</summary>
     internal class Reader
     {
-        private int iD;
-        private string fullName;
-        private DateTime birthDate;
-        private string gender;
-        private string phoneNumber;
-        private string email;
-        private string address;
-        private double balance;
-        private DateTime createdAt;
+        public int ID { get; set; }
+        public string FullName { get; set; } = "";
+        public DateTime? BirthDate { get; set; }
+        public string Gender { get; set; } = "";
+        public string PhoneNumber { get; set; } = "";
+        public string Email { get; set; } = "";
+        public string Address { get; set; } = "";
+        public decimal Balance { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+        public Reader() { }
 
         public Reader(DataRow row)
         {
-            this.ID = (int)row["UserID"];
-            this.FullName = (string)row["FullName"];
-            this.BirthDate = (DateTime)row["BirthDate"];
+            ID = Convert.ToInt32(row["UserID"]);
+            FullName = row["FullName"].ToString() ?? "";
+            BirthDate = row["BirthDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(row["BirthDate"]);
+            Gender = row["Gender"].ToString() ?? "";
+            PhoneNumber = row["PhoneNumber"].ToString() ?? "";
+            Email = row["Email"].ToString() ?? "";
+            Address = row["Address"].ToString() ?? "";
+            Balance = Convert.ToDecimal(row["Balance"]);
+            CreatedAt = Convert.ToDateTime(row["CreatedAt"]);
         }
 
-
-        public Reader(string fullName, DateTime birthDate, string gender, string phoneNumber, string email, string address, double balance, DateTime createdAt)
+        public Reader(string fullName, DateTime? birthDate, string gender, string phoneNumber, string email, string address, decimal balance, DateTime createdAt)
         {
-            this.FullName = fullName;
-            this.BirthDate = birthDate;
-            this.Gender = gender;
-            this.PhoneNumber = phoneNumber;
-            this.Email = email;
-            this.Address = address;
-            this.Balance = balance;
-            this.CreatedAt = createdAt;
+            FullName = fullName;
+            BirthDate = birthDate;
+            Gender = gender;
+            PhoneNumber = phoneNumber;
+            Email = email;
+            Address = address;
+            Balance = balance;
+            CreatedAt = createdAt;
         }
-
-        public int ID { get => iD; set => iD = value; }
-        public string FullName { get => fullName; set => fullName = value; }
-        public DateTime BirthDate { get => birthDate; set => birthDate = value; }
-        public string Gender { get => gender; set => gender = value; }
-        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
-        public string Email { get => email; set => email = value; }
-        public string Address { get => address; set => address = value; }
-        public double Balance { get => balance; set => balance = value; }
-        public DateTime CreatedAt { get => createdAt; set => createdAt = value; }
     }
 }

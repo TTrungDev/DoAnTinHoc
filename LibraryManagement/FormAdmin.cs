@@ -16,14 +16,6 @@ namespace LibraryManagement
         public FormAdmin()
         {
             InitializeComponent();
-            loadAccountList();
-        }
-        void loadAccountList()
-        {
-            string query = "SELECT * FROM Account";
-
-           dgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
         }
     }
 }

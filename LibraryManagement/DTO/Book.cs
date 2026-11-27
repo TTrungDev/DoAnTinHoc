@@ -1,57 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace LibraryManagement.DTO
 {
-    public class Book
+    /// <summary>Sách (bảng Books). CategoryName/AuthorName/PublisherName chỉ có khi query JOIN, dùng để hiển thị lên lưới</summary>
+    internal class Book
     {
-        private int iD;
-        private string title;
-        private int authorID;
-        private int categoryID;
-        private int publisherID;
-        private int publishyear;
-        private int quantity;
-        private int available;
-        private string description;
-        //private DateTime createdDate;
+        public int ID { get; set; }
+        public string Title { get; set; } = "";
+        public int CategoryID { get; set; }
+        public int AuthorID { get; set; }
+        public int PublisherID { get; set; }
+        public int? PublishYear { get; set; }
+        public int Quantity { get; set; }
+        public int Available { get; set; }
+        public string Description { get; set; } = "";
+        public DateTime CreatedAt { get; set; }
+        public string CategoryName { get; set; } = "";
+        public string AuthorName { get; set; } = "";
+        public string PublisherName { get; set; } = "";
+
+        public Book() { }
+
         public Book(DataRow row)
         {
-            this.iD = (int)row["BookID"];
-            this.title = (string)row["Title"];
-            this.authorID = (int)row["AuthorID"];
-            this.categoryID = (int)row["CategoryID"];
-            this.publisherID = (int)row["PublisherID"];
-            this.publishyear = (int)row["PublishYear"];
-            this.quantity = (int)row["Quantity"];
-            this.available = (int)row["Available"];
-            this.description = (string)row["Description"];
-            //this.createdDate = (DateTime)row["CreatedDate"];
+            ID = Convert.ToInt32(row["BookID"]);
+            Title = row["Title"].ToString() ?? "";
+            CategoryID = Convert.ToInt32(row["CategoryID"]);
+            AuthorID = Convert.ToInt32(row["AuthorID"]);
+            PublisherID = Convert.ToInt32(row["PublisherID"]);
+            PublishYear = row["PublishYear"] == DBNull.Value ? (int?)null : Convert.ToInt32(row["PublishYear"]);
+            Quantity = Convert.ToInt32(row["Quantity"]);
+            Available = Convert.ToInt32(row["Available"]);
+            Description = row["Description"].ToString() ?? "";
+            CreatedAt = Convert.ToDateTime(row["CreatedAt"]);
+            CategoryName = row.Table.Columns.Contains("CategoryName") ? (row["CategoryName"].ToString() ?? "") : "";
+            AuthorName = row.Table.Columns.Contains("AuthorName") ? (row["AuthorName"].ToString() ?? "") : "";
+            PublisherName = row.Table.Columns.Contains("PublisherName") ? (row["PublisherName"].ToString() ?? "") : "";
         }
-        public Book(int iD, string title, int authorID, int categoryID, int publisherID, int publishyear, int quantity, int available, string description, DateTime createdDate)
-        {
-            this.iD = iD;
-            this.title = title;
-            this.authorID = authorID;
-            this.categoryID = categoryID;
-            this.publisherID = publisherID;
-            this.publishyear = publishyear;
-            this.quantity = quantity;
-            this.available = available;
-            this.description = description;
-            //this.createdDate = createdDate;
-        }
-        public int ID { get => iD; set => iD = value; }
-        public string Title { get => title; set => title = value; }
-        public int AuthorID { get => authorID; set => authorID = value; }
-        public int CategoryID { get => categoryID; set => categoryID = value; }
-        public int PublisherID { get => publisherID; set => publisherID = value; }
-        public int Publishyear { get => publishyear; set => publishyear = value; }
-        public int Quantity { get => quantity; set => quantity = value; }
-        public int Available { get => available; set => available = value; }
-        public string Description { get => description; set => description = value; }
-        //public DateTime CreatedDate { get => createdDate; set => createdDate = value; }
     }
 }

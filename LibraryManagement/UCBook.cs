@@ -20,8 +20,11 @@ namespace LibraryManagement
         public void showBookList()
         {
             dgvBook.DataSource = BookDAO.Instance.LoadBookList();
-            object[] find = { txtFindB.Text };
-            dgvBook.DataSource = BookDAO.Instance.LoadBookList(find);
+        }
+
+        private void btnTimB_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

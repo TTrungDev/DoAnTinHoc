@@ -173,6 +173,7 @@
             button6.TabIndex = 2;
             button6.Text = "Tìm kiếm";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += btnTimB_Click;
             // 
             // txtFindB
             // 
